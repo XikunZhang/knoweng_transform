@@ -1,7 +1,9 @@
-FROM knowengdev/jupyter_notebooks:06_22_2017
+FROM knowengdev/jupyter_notebooks:base_notebook
 MAINTAINER Dan Lanier <lanier4@illinois.edu>
 
 USER root
+ENV BASE_LOC /home/jovyan/pipelines
+ENV DEV_SRC_LOC $BASE_LOC/knoweng_transform
 
 RUN rm -rf ${DEV_SRC_LOC}
 RUN git clone https://github.com/dlanier/knoweng_transform.git ${DEV_SRC_LOC}
