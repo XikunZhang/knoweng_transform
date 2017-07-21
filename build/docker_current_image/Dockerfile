@@ -6,6 +6,8 @@ ENV BASE_LOC /home/jovyan/pipelines
 ENV DEV_SRC_LOC $BASE_LOC/knoweng_transform
 
 RUN rm -rf ${DEV_SRC_LOC}
+RUN pip install --upgrade pip
+RUN pip install knpackage
 RUN git clone https://github.com/dlanier/knoweng_transform.git ${DEV_SRC_LOC}
 
 COPY start-notebook.sh /usr/local/bin/
